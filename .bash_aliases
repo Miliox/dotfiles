@@ -12,12 +12,6 @@ alias ccat='source-highlight --out-format=esc -o STDOUT -i'
 
 alias pj='cd ~/Projects/'
 
-if [ "$(uname)" == "Darwin" ]; then
-    alias v='mvim -f'
-else
-    alias v='gvim -f'
-fi
-
 function title()
 {
     echo -ne "\e]1;${1}\a"
@@ -36,7 +30,10 @@ man() {
 }
 
 if [[ "Darwin" == `uname -s`  ]]; then
+    alias v='mvim -f'
     alias brwupg="brew update && brew upgrade"
+else
+    alias v='gvim -f'
 fi
 
 set completion-ignore-case on
