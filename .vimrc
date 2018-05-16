@@ -37,6 +37,8 @@ set encoding=utf-8
 set modelines=5
 syntax enable   " enable syntax highlight
 
+let mapleader='\'
+
 set autoread                    " reload file if changed outside
 set backspace=indent,eol,start  " expected behavior for backspace
 set backup                      " always keep a backup file
@@ -110,17 +112,39 @@ inoremap <C-S-tab> <Esc>:tabprevious<CR>`[
 inoremap <C-tab>   <Esc>:tabnext<CR>`[
 inoremap <C-t>     <Esc>:tabnew<CR>
 
-" Vi Like TAbNavigation
-nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tt  :tabedit<Space>
-nnoremap tn  :tabnext<Space>
-nnoremap tm  :tabm<Space>
-nnoremap td  :tabclose<CR>
+" Vi Like TabNavigation
+nnoremap <leader>t  :tabfirst<CR>
+nnoremap <leader>s  :tabnext<CR>
+nnoremap <leader>h  :tabprev<CR>
+nnoremap <leader>n  :tablast<CR>
+nnoremap <leader>q  :tabclose<CR>
 
-" Go to Tab
+" Better hjkl for Dvorak User
+nmap h <Left>
+nmap t <Up>
+nmap n <Down>
+nmap s <Right>
+nmap H <Home>
+nmap T <PageUp>
+nmap N <PageDown>
+nmap S <End>
+
+vmap h <Left>
+vmap t <Up>
+vmap n <Down>
+vmap s <Right>
+vmap H <Home>
+vmap T <PageUp>
+vmap N <PageDown>
+vmap S <End>
+
+" Escape with Ctrl-C
+nmap <c-c> <esc>
+imap <c-c> <esc>
+vmap <c-c> <esc>
+omap <c-c> <esc>
+
+" Go to Tab (Windows and Linux)
 nnoremap <A-1> 1gt
 nnoremap <A-2> 2gt
 nnoremap <A-3> 3gt
@@ -131,6 +155,30 @@ nnoremap <A-7> 7gt
 nnoremap <A-8> 8gt
 nnoremap <A-9> 9gt
 nnoremap <A-0> 10gt
+
+" Go to Tab (MacVim)
+nnoremap <D-1> 1gt
+nnoremap <D-2> 2gt
+nnoremap <D-3> 3gt
+nnoremap <D-4> 4gt
+nnoremap <D-5> 5gt
+nnoremap <D-6> 6gt
+nnoremap <D-7> 7gt
+nnoremap <D-8> 8gt
+nnoremap <D-9> 9gt
+nnoremap <D-0> 10gt
+
+" Go to Tab (Mac CLI)
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+nnoremap <leader>0 10gt
 
 " Split Navigation
 map <silent> <C-h> <C-w>h
