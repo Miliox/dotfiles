@@ -48,7 +48,7 @@ set hlsearch                    " enable search highligh
 set mouse=a                     " expected behavior for mouse
 set nocompatible                " remove vi compability annoyances
 set nowrap                      " don't break virtual lines
-set number                      " show line number
+set relativenumber number       " show hybrid line number
 set list                        " show invisible character
 set wildmenu                    " show command suggestions
 set wildmode=list:longest,full  " list available options
